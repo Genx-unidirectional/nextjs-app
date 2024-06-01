@@ -4,7 +4,7 @@ import React from "react";
 function layout({ children }: { children: React.ReactNode }) {
   return (
     <div className="h-screen w-full">
-      <header className="h-[64px] bg-slate-100 flex justify-center items-center border-dashed border-b border-orange-600 w-full ">
+      <header className="h-[64px] bg-white flex justify-center items-center border-dashed border-b border-orange-600 w-full ">
         <h1 className="text-black font-bold text-3xl">Navigation page</h1>
       </header>
 
