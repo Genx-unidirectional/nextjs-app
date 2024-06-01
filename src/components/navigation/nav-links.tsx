@@ -21,6 +21,7 @@ function NavLinks() {
           {navConfig.map((link) => {
             return (
               <Link
+                key={`${link.url}sjjjddd`}
                 className={cn(
                   "bg-orange-800 text-white font-bold text-lg rounded-lg p-1",
                   { "bg-white text-orange-800": pathname === link.url }
@@ -43,6 +44,7 @@ function NavLinks() {
         {navConfig.map((link) => {
           return (
             <button
+              key={`${link.name}sdfsdfijfosjfospwppwpwwww`}
               className={cn(
                 "bg-orange-800 text-white font-bold text-lg rounded-lg p-1",
                 { "bg-white text-orange-800": pathname === link.url }
@@ -53,6 +55,20 @@ function NavLinks() {
             </button>
           );
         })}
+      </div>
+      <div
+        className="p-2 flex  flex-col items-start  border-b border-black gap-2 
+      "
+      >
+        <Link
+          className={cn(
+            "bg-orange-800 text-white font-bold text-lg rounded-lg p-1",
+            { "bg-white text-orange-800": pathname === "/navigation/dashboard" }
+          )}
+          href="/navigation/dashboard"
+        >
+          Go to dashboard
+        </Link>
       </div>
     </div>
   );
