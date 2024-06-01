@@ -1,10 +1,13 @@
 "use client";
 import { navConfig } from "@/config/navigate";
+import cn from "@/lib/utils";
 import Link from "next/link";
-import { useRouter } from "next/navigation";
+import { usePathname, useRouter } from "next/navigation";
 
 function NavLinks() {
   const router = useRouter();
+  const pathname = usePathname();
+
   return (
     <div className="h-full flex flex-col items-start my-2 p-4 w-full">
       <div
@@ -18,7 +21,10 @@ function NavLinks() {
           {navConfig.map((link) => {
             return (
               <Link
-                className="bg-orange-800 text-white font-bold text-lg rounded-lg p-1"
+                className={cn(
+                  "bg-orange-800 text-white font-bold text-lg rounded-lg p-1",
+                  { "bg-white text-orange-800": pathname === link.url }
+                )}
                 href={link.url}
               >
                 {link.name}
@@ -37,7 +43,10 @@ function NavLinks() {
         {navConfig.map((link) => {
           return (
             <button
-              className="bg-orange-800 text-white font-bold text-lg rounded-lg p-1"
+              className={cn(
+                "bg-orange-800 text-white font-bold text-lg rounded-lg p-1",
+                { "bg-white text-orange-800": pathname === link.url }
+              )}
               onClick={() => router.push(link.url)}
             >
               {link.name}
